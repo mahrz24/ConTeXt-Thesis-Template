@@ -1,0 +1,31 @@
+\startproduct thesis
+
+\project project_thesis
+
+% Thesis specific layout
+\environment env_thesis_layout
+
+\version[concept]
+
+\language[en-uk]
+
+%\showlayout
+
+% Load the title information
+\component title
+
+% Typeset the title page
+% This is done here to reuse title informaiton in thesis & cover
+\TitlePage
+
+% Let the page numbering reappear
+\setuppagenumbering[location=middle]
+
+% Double Line spacing
+\setupinterlinespace[medium]
+
+\component intro
+\component pics
+\component math
+
+\stopproduct

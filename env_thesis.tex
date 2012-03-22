@@ -1,0 +1,20 @@
+\startenvironment env_thesis
+\project project_thesis
+
+% Where to look for components
+\usepath[{frontmatter,backmatter,chapters}]
+
+% Where images are located (pdfs not tikz in external tex)
+\doifmodeelse{*product}
+ {\setupexternalfigures[directory={../general_img}]}
+ {\setupexternalfigures[directory={../general_img, img}]}
+
+
+\setupalign[hz,hanging]
+
+\usemodule[simplefonts] % load the module.
+\setmainfont[Alegreya][protrusion=quality,expansion=quality]
+
+
+\stopenvironment
+

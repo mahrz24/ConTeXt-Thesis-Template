@@ -1,0 +1,46 @@
+\startenvironment env_thesis_layout
+\product thesis
+
+% Paper Size
+\setuppapersize[A4,A4] % [] On larger paper with cutmarks
+
+\definelayout[titles][
+  %location=middle,marking=color
+  topspace=1cm,
+  backspace=3.5cm,
+  header=1cm,
+  height=27cm,
+  footer=1cm,
+  width=14cm,
+  leftedge=0cm,
+  leftmargin=1.5cm,
+  leftdistance=0cm,
+  leftmargindistance=3mm,
+  rightmargin=3cm,
+%  rightmargindistance=0cm,
+]
+
+
+\setuplayout[
+  %location=middle,marking=color
+  topspace=1cm,
+  backspace=3.5cm,
+  header=1cm,
+  height=27cm,
+  footer=1cm,
+  width=12cm,
+  leftedge=0cm,
+  leftmargin=1.5cm,
+  leftdistance=0cm,
+  leftmargindistance=3mm,
+  rightmargin=4.5cm,
+%  rightmargindistance=0cm,
+]
+
+
+
+% Page Numbering
+\setuppagenumbering[alternative=doublesided]
+
+\stopenvironment
+
