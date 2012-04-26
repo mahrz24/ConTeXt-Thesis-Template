@@ -1,25 +1,35 @@
-
 \startcomponent title
 \product thesis
 
 % Title information (on cover and first page)
-\begintitle[title]
-Thesis Title
-\endtitle
+\doctitle{Thesis Title}
+\docsubtitle{Thesis Subtitle}
+\author{Author}
 
-\begintitle[subtitle]
-Thesis Subtitle
-\endtitle
+% Backpage of the Titlepage
+\useURL[contactmail][mailto:test@test.com][][test@test.com]
 
-\begintitle[author]
-Author
-\endtitle
+\beginimprint[contact]
+\Author \\
+Street \\
+City \\
+Postcode \\
+\from[contactmail]
+\endimprint
 
-\begintitle[date]
-\currentdate
-\endtitle
+\beginimprint[bibinfo]
+ISBN: XXXXXXXX-X \\
+Can be found nowhere.
+\endimprint
 
-% Backpage information (imprint, copyright notice etc)
+\begincopyright
+\copyright Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quam eros, consequat quis tempor fermentum, pellentesque nec justo. Praesent a tortor vitae est semper faucibus sit amet vel felis. 
 
+Ut ante dolor, interdum sit amet dapibus sed, tempus vitae turpis. Nam faucibus euismod iaculis. Quisque rhoncus lectus ac magna adipiscing id hendrerit augue malesuada. Proin mollis turpis in leo mollis quis pretium sapien vulputate. Nulla suscipit, turpis congue mollis accumsan, est justo aliquam nisl, vitae tincidunt elit ante a mauris. Fusce viverra hendrerit tincidunt. Duis porttitor tempus lobortis. Quisque gravida est non erat faucibus commodo. Sed ultrices tempus enim, id molestie libero ornare quis. 
+\endcopyright
+
+\starttext
+\TitlePage
+\stoptext
 
 \stopcomponent

@@ -6,42 +6,81 @@
 
 \definelayout[titles][
   %location=middle,marking=color
-  topspace=1cm,
-  backspace=3.5cm,
-  header=1cm,
-  height=27cm,
-  footer=1cm,
-  width=14cm,
+  topspace=2.625cm,
+  backspace=2.625cm,
+  header=0cm,
+  height=25.95cm,
+  footer=1.5cm,
+  width=15.75cm,
   leftedge=0cm,
-  leftmargin=1.5cm,
+  leftmargin=0cm,
   leftdistance=0cm,
-  leftmargindistance=3mm,
-  rightmargin=3cm,
+  leftmargindistance=0cm,
+  rightmargin=3.5cm,
 %  rightmargindistance=0cm,
 ]
 
 
 \setuplayout[
   %location=middle,marking=color
-  topspace=1cm,
-  backspace=3.5cm,
-  header=1cm,
-  height=27cm,
-  footer=1cm,
-  width=11cm,
+  topspace=2.625cm,
+  backspace=2.625cm,
+  header=0cm,
+  height=24.3225cm,
+  footer=1.5cm,
+  width=13.125cm,
   leftedge=0cm,
-  leftmargin=1.5cm,
+  leftmargin=0cm,
   leftdistance=0cm,
-  leftmargindistance=3mm,
-  rightmargin=4.5cm,
+  leftmargindistance=0cm,
+  rightmargin=3.5cm,
 %  rightmargindistance=0cm,
 ]
 
+% Colors
+\setupcolor[hex]
+\definecolor[ChapterNumberColor][h=BBBBBB]
+
 % Margins
-\setupinmargin[right][style=\ss\bf \tfxx]
+\setupinmargin[right][style=\tfxx]
 
 % Page Numbering
 \setuppagenumbering[alternative=doublesided]
+
+\def\ThesisChapterCommand#1#2% #1 is number, #2 is text
+  {\headtext{chapter}#2 \inright{\vskip-0.75cm\hskip0.25cm{\color[ChapterNumberColor]{#1}}}}
+%
+% Headers & Heads
+
+\definefont[ChapterNumber][Serif at 96pt]
+
+\setuphead[chapter][
+  align={flushleft},
+  textstyle=\tfa,
+  deeptextcommand=\uppercase,
+  command=\ThesisChapterCommand,
+  numberstyle=\ChapterNumber,
+  after={\blank[medium]}\hrule\blank
+  ]
+
+\setuphead[section][
+  align={flushleft},
+  textstyle=\tfxx,
+  numberstyle=\tfx,
+  deeptextcommand=\uppercase,
+  ]
+
+\setuphead[subsection][
+  align={flushleft},
+  textstyle=\tfx\it,
+  numberstyle=\tfx,
+  ]
+
+\setuphead[subsubsection][
+  align={flushleft},
+  textstyle=\tfx\it,
+  numberstyle=\tfx,
+  ]
 
 \stopenvironment
 

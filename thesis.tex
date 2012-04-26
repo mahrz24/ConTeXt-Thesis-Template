@@ -1,27 +1,45 @@
 \startproduct thesis
 
+%% TODO
+% Styled Title
+% Title Page
+% Abstract
+% Epigraph
+% TOC, TOF, TOT
+
+% Overall project
 \project project_thesis
 
 % Thesis specific layout
 \environment env_thesis_layout
 
-\version[concept]
+% Use pdf links & clickable urls
+\setupinteraction[state=start]
 
+\version[concept]
 \language[en-gb]
 
 %\showlayout
 
-% Load the title information
+% The title page
 \component title
 
-% Typeset the title page
-% This is done here to reuse title informaiton in thesis & cover
-\TitlePage
+% Counting starts after the title
+\setuppagenumber[number=1]
+
+% Let the page numbering appear with roman numerals
+% in the middle
+\setuppagenumbering[location=middle]
+\setuppagenumber[numberconversion=romannumerals]
+
+\component dedication
 
 % Let the page numbering reappear
-\setuppagenumbering[location=middle]
+\setuppagenumber[numberconversion=numbers]
+\setuppagenumbering[conversion=numbers,
+                    location=right]
 
-% Double Line spacing
+% One and half line spacing (if needed)
 \setupinterlinespace[medium]
 
 \component intro

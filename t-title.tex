@@ -1,0 +1,58 @@
+
+\defineblock[imprint]
+\hideblocks[imprint]
+
+\defineblock[copyright]
+\hideblocks[copyright]
+
+
+\unprotect
+\def\doctitle#1{\gdef\@title{#1}}
+\def\docsubtitle#1{\gdef\@subtitle{#1}}
+\def\author#1{\gdef\@author{#1}}
+\def\date#1{\gdef\@date{#1}}
+\date{\currentdate}  % Default to today unless specified otherwise.
+
+\def\Author
+{
+  \@author
+}
+
+% Typeset the title page, including the backpage
+\def\TitlePage
+{
+  \setuppagenumbering[location=]
+  \setuplayout[titles]
+  \startalignment[center]
+    {\tfd \bf \@title}
+    \blank[3*medium]
+    {\tfc \@subtitle}
+    \blank[4*medium]
+    {\tfb \@author}
+    \blank[2*medium]
+    {\tfa \@date}
+  \stopalignment
+  \page
+    {
+      \tfx
+      \useblocks[imprint][contact]
+      \blank[3cm]
+      \useblocks[imprint][bibinfo]
+    }
+    {\vfill \tfxx \useblocks[copyright]}
+    \page
+  \setuplayout[reset]
+}
+
+% Typeset the cover
+\def\CoverFront{{\bf \useblocks[title]}}
+\def\CoverSpine{{\bf \useblocks[title]}}
+\def\CoverBack{{\bf \useblocks[title]}}
+
+\protect
+
+
+
+
+
+
