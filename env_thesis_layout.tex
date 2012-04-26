@@ -49,6 +49,11 @@
 
 \def\ThesisChapterCommand#1#2% #1 is number, #2 is text
   {\headtext{chapter}#2 \inright{\vskip-0.75cm\hskip0.25cm{\color[ChapterNumberColor]{#1}}}}
+
+% Paragraphs
+\setupwhitespace[medium]
+\setupindenting[no,medium,next]
+
 %
 % Headers & Heads
 
@@ -64,22 +69,24 @@
   ]
 
 \setuphead[section][
-  align={flushleft},
   textstyle=\tfxx,
   numberstyle=\tfx,
   deeptextcommand=\uppercase,
+  distance=6pt,
+  before={\blank[line]},
+  after={\blank[line]}
   ]
 
 \setuphead[subsection][
-  align={flushleft},
   textstyle=\tfx\it,
   numberstyle=\tfx,
+  distance=6pt
   ]
 
 \setuphead[subsubsection][
-  align={flushleft},
   textstyle=\tfx\it,
   numberstyle=\tfx,
+  distance=6pt
   ]
 
 \stopenvironment
