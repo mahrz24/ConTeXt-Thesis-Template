@@ -17,15 +17,13 @@
   leftdistance=0cm,
   leftmargindistance=0cm,
   rightmargin=3.5cm,
-%  rightmargindistance=0cm,
 ]
-
 
 \setuplayout[
   %location=middle,marking=color
   topspace=2.625cm,
   backspace=2.625cm,
-  header=0cm,
+  header=24pt,
   height=24.3225cm,
   footer=1.5cm,
   width=13.125cm,
@@ -34,7 +32,6 @@
   leftdistance=0cm,
   leftmargindistance=0cm,
   rightmargin=3.5cm,
-%  rightmargindistance=0cm,
 ]
 
 % Colors
@@ -54,39 +51,68 @@
 \setupwhitespace[medium]
 \setupindenting[no,medium,next]
 
-% Headers & Heads
+% Headers
+\setupheader[state=high,style=slanted]
+\setupheadertexts[][chapter][section][]
 
+% Alternative margin headers
+% \newdimen\Margin
+% \Margin=3cm
+
+% \newdimen\MarginRaise
+% \MarginRaise=72ex
+
+% \setuptexttexts[margin][][\setups{text a}][\setups{text b}][]
+% \setuptext[style=\tf,state=high]
+
+% \startsetups[text a]
+% \raise\MarginRaise\hbox{\vtop{\hsize=\Margin%
+%   \startalignment[right]
+%   \hskip0.25cm
+%   \em
+%   \getmarking[chapter]
+%   \stopalignment
+% }}
+% \stopsetups
+
+% \startsetups[text b]
+% \raise\MarginRaise\hbox{\vtop{\hsize=\Margin%
+%   \startalignment[left]
+%   \hskip0.25cm
+%   \em
+%   \getmarking[section]
+%   \stopalignment
+% }}
+% \stopsetups
+
+% Heads
 \definefont[ChapterNumber][Serif at 96pt]
 
-\setuphead[chapter][
-  align={flushleft},
-  textstyle=\tfa,
-  deeptextcommand=\uppercase,
-  command=\ThesisChapterCommand,
-  numberstyle=\ChapterNumber,
-  after={\blank[medium]}\hrule\blank
-  ]
+\setuphead[chapter][align={flushleft},
+                    textstyle=\tfb\cap,
+                    deeptextcommand=\uppercase,
+                    command=\ThesisChapterCommand,
+                    numberstyle=\ChapterNumber,
+                    after={\blank[medium]}\hrule\blank,
+                    header=high,
+                    text=high]
 
-\setuphead[section][
-  textstyle=\tfxx,
-  numberstyle=\tfx,
-  deeptextcommand=\uppercase,
-  distance=6pt,
-  before={\blank[line]},
-  after={\blank[line]}
-  ]
+\setuphead[section][textstyle=\tfx\cap,
+                    numberstyle=\tfx,
+                    deeptextcommand=\uppercase,
+                    distance=6pt,
+                    before={\blank[line]},
+                    after={\blank[line]}]
 
-\setuphead[subsection][
-  textstyle=\tfx\it,
-  numberstyle=\tfx,
-  distance=6pt
-  ]
+\setuphead[subsection][textstyle=\tfx\it,
+                      numberstyle=\tfx,
+                      distance=6pt]
 
-\setuphead[subsubsection][
-  textstyle=\tfx\it,
-  numberstyle=\tfx,
-  distance=6pt
-  ]
+\setuphead[subsubsection][textstyle=\tfx\it,
+                          numberstyle=\tfx,
+                          distance=6pt]
+
+
 
 \stopenvironment
 

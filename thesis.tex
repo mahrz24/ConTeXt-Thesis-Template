@@ -1,17 +1,40 @@
 \startproduct thesis
 
 %% TODO
-% Styled Title
+% Features:
+% Style Switch: Classic/Modern (via modes)
+% Colour Switch: Gray/Coloured (via modes)
+% Colour and fontsizes (via variables)
+% Fonts (via variables)
+% Automatic Layout for Front/Backmatter/Title (via modes)
+% Chapter Epigraphs
+% Tables
+% Figures and Captions
+% Headers
+
+% Parts:
+% Cover
+% Styled Pre-Title (possibly copy of cover)
 % Title Page
 % Abstract
 % Epigraph
 % TOC, TOF, TOT
+% Abbreviations
+% Symbols
+
+% Bibliography
+% Index
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Thesis Project
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Overall project
 \project project_thesis
 
 % Thesis specific layout
 \environment env_thesis_layout
+\setupnotation[footnote][way=bypage,numbercommand=\tf]
 
 % Use pdf links & clickable urls
 \setupinteraction[state=start]
@@ -21,12 +44,20 @@
 
 %\showlayout
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % The title page
 \component title
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Front Matter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\startfrontmatter
 % Counting starts after the title
 \setuppagenumber[number=1]
-
 % Let the page numbering appear with roman numerals
 % in the middle
 \setuppagenumbering[location=middle]
@@ -34,10 +65,20 @@
 
 \component dedication
 
+\stopfrontmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Body Matter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\startbodymatter
 % Let the page numbering reappear
 \setuppagenumber[numberconversion=numbers]
 \setuppagenumbering[conversion=numbers,
                     location=right]
+
+% Footnotes
+\setupfootnotes[rule=off]
 
 % One and half line spacing (if needed)
 %\setupinterlinespace[medium]
@@ -45,5 +86,15 @@
 \component intro
 \component pics
 \component math
+\stopbodymatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Backmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \stopproduct
