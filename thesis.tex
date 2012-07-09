@@ -17,14 +17,19 @@
 % Title Page
 % Abstract
 % Dedication
-% Epigraph *
-% TOC, TOF, TOT
-% Foreword/Acknowledgements
-% Abbreviations
-% Symbols
+% Epigraph
+% TOC, TOF, TOT *
+% Abbreviations *
+% Symbols *
+% Foreword/Acknowledgements *
 
 % Bibliography
 % Index
+
+%% BUGS
+% Page numbering starts with page 5 instead of 1 as it should
+% Roman numeral on toc
+% TOC not working
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Thesis Project
@@ -40,13 +45,15 @@
 % Use pdf links & clickable urls
 \setupinteraction[state=start]
 
-% Use this module to print nice epigraphs
+% Use this module to print epigraphs
 \usemodule[epigraph]
 
 \version[concept]
 \language[en-gb]
 
 %\showlayout
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Title
@@ -62,12 +69,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \startfrontmatter
-% Counting starts after the title
-\setuppagenumber[number=1]
+
 % Let the page numbering appear with roman numerals
 % in the middle
+\setuppagenumber[numberconversion=romannumerals,number=1]
+\resetpagenumber
 \setuppagenumbering[location=middle]
-\setuppagenumber[numberconversion=romannumerals]
+
 
 % Compact mode removes forcing frontmatter components
 % to start on an odd page
@@ -77,6 +85,17 @@
 \component dedication
 \component epigraph
 
+\component tocs
+\component symabbrv
+
+\setuplayout[reset]
+
+% Let the page numbering reappear with arabic numerals
+\setuppagenumber[numberconversion=numbers]
+\setuppagenumbering[conversion=numbers,
+                    location=right]
+
+\component foreword
 
 \stopfrontmatter
 
@@ -85,7 +104,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \startbodymatter
-% Let the page numbering reappear
+
+% Let the page numbering reappear with arabic numerals
 \setuppagenumber[numberconversion=numbers]
 \setuppagenumbering[conversion=numbers,
                     location=right]
