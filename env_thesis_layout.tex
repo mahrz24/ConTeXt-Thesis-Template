@@ -60,10 +60,8 @@
 \setuppagenumbering[alternative=doublesided]
 
 % #1 is number, #2 is text
-% \def\ThesisChapterCommand#1#2
-%   {\headtext{chapter}#2 \inright{\vskip-0.75cm\hskip0.25cm{\color[ChapterNumberColor]{#1}}}}
+\unexpanded\def\ThesisChapterCommand#1#2{\headtext{chapter}#2 \inright{\vskip-0.75cm\hskip0.25cm{\color[ChapterNumberColor]{#1}}}}
 
-\def\ThesisChapterCommand#1#2{{#1}{#2}}
 
 % Paragraphs
 \setupwhitespace[medium]
@@ -107,28 +105,20 @@
 \definefont[ChapterNumber][Serif at 96pt]
 
 \setuphead[chapter][textstyle=\tfb\cap,
-                    %numberstyle=\ChapterNumber,
-                    %command=\ThesisChapterCommand,
+                    numberstyle=\ChapterNumber,
+                    command=\ThesisChapterCommand,
                     deeptextcommand=\uppercase,
                     after={\blank[medium]}\hrule\blank,
-                    header=high]
-
-% \setuphead[chapter][%align={flushleft},
-%                     % textstyle=\tfb\cap,
-%                     % deeptextcommand=\uppercase,
-%                     % command=\ThesisChapterCommand,
-%                     % numberstyle=\ChapterNumber,
-%                     % after={\blank[medium]}\hrule\blank,
-%                     %header=high,
-%                     %text=high
-%                     ]
+                    header=high,
+                    text=high]
 
 \setuphead[section][textstyle=\tfx\cap,
                     numberstyle=\tfx,
                     deeptextcommand=\uppercase,
                     distance=6pt,
                     before={\blank[line]},
-                    after={\blank[line]}]
+                    after={\blank[line]},
+                    number=yes]
 
 \setuphead[subsection][textstyle=\tfx\it,
                       numberstyle=\tfx,
@@ -137,12 +127,6 @@
 \setuphead[subsubsection][textstyle=\tfx\it,
                           numberstyle=\tfx,
                           distance=6pt]
-\setuplist
-[chapter]
-[before=\blank,after=\blank,style=bold]
-\setuplist
-[section]
-[alternative=d,left=(,right=),pagestyle=slanted,prefix=no]
 
 
 \stopenvironment
