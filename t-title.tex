@@ -22,11 +22,13 @@
 {
   \setuppagenumbering[location=]
   \setuplayout[titles]
+  \null
+  \vskip5cm
   \startalignment[center]
-    {\tfd \bf \@title}
-    \blank[3*medium]
-    {\tfc \@subtitle}
-    \blank[4*medium]
+    {\tfd {\cap{\@title}}}
+    \blank[5*medium]
+    {\tfc \it \@subtitle}
+    \blank[8*medium]
     {\tfb \@author}
     \blank[2*medium]
     {\tfa \@date}
@@ -40,6 +42,19 @@
     }
     {\vfill \tfxx \useblocks[copyright]}
     \page
+  \setuplayout[reset]
+}
+
+\def\PreTitlePage
+{
+  \setuppagenumbering[location=]
+  \setuplayout[titles]
+  \null
+  \vskip5cm
+  {\tfc \sc \@title}
+  \page
+  \null
+  \page
   \setuplayout[reset]
 }
 

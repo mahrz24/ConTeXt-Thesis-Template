@@ -10,15 +10,16 @@
 % Chapter Epigraphs
 % Tables
 % Figures and Captions
-% Headers
 
 % Parts:
-% Cover
+% Cover *
 % Styled Pre-Title (possibly copy of cover)
 % Title Page
 % Abstract
-% Epigraph
+% Dedication
+% Epigraph *
 % TOC, TOF, TOT
+% Foreword/Acknowledgements
 % Abbreviations
 % Symbols
 
@@ -39,6 +40,9 @@
 % Use pdf links & clickable urls
 \setupinteraction[state=start]
 
+% Use this module to print nice epigraphs
+\usemodule[epigraph]
+
 \version[concept]
 \language[en-gb]
 
@@ -49,6 +53,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % The title page
+% We want a pretitle
+\enablemode[pretitled]
 \component title
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -63,7 +69,14 @@
 \setuppagenumbering[location=middle]
 \setuppagenumber[numberconversion=romannumerals]
 
+% Compact mode removes forcing frontmatter components
+% to start on an odd page
+% \enablemode[compact]
+
+\component abstract
 \component dedication
+\component epigraph
+
 
 \stopfrontmatter
 
@@ -81,7 +94,7 @@
 \setupfootnotes[rule=off]
 
 % One and half line spacing (if needed)
-%\setupinterlinespace[medium]
+\setupinterlinespace[medium]
 
 \component intro
 \component pics
