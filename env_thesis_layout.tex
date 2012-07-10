@@ -108,7 +108,7 @@
                     numberstyle=\ChapterNumber,
                     command=\ThesisChapterCommand,
                     deeptextcommand=\uppercase,
-                    after={\blank[medium]}\hrule\blank,
+                    after={\blank[2*medium]}\hrule\blank,
                     header=high,
                     text=high]
 
@@ -128,6 +128,8 @@
                           numberstyle=\tfx,
                           distance=6pt]
 
+% TOCs
+
 \unprotect
 
 \definelistplacement [chapter_placement]#1#2#3{%
@@ -146,6 +148,14 @@
 \setuplist[section][alternative=section_placement]
 
 \protect
+
+\setuplist[figure][textstyle=\tfx]
+
+% Floats
+
+% General captions
+\setupcaptions [headstyle=\cap\ss, style=\ss\tfxx, width=\hsize]
+
 
 \stopenvironment
 
