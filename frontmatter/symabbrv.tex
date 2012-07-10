@@ -1,7 +1,32 @@
 \startcomponent symabbrv
 \product thesis
 
+\definesynonyms[abbreviation][abbreviations][\infull]
+
+\abbreviation {UN} {United Nations}
+\abbreviation {UK} {United Kingdom}
+\abbreviation {USA} {United States of America}
+
+\setupsynonyms[abbreviation]%[criterium=all]
+
+\definesynonyms[notation][notations][\NDef][\NSymbol]
+
+\notation [NMI] {$I(X;Y)$}{Mutual Information}
+\notation [NEV] {x}{Event}
+
+\setupsynonyms[notation][criterium=all]
+
 \starttext
+
+\title{Abbreviations}
+
+%\placelist[abbreviations]
+\placelistofabbreviations
+
+\title{Notation}
+
+\placelistofnotations
+
 \stoptext
 
 \stopcomponent

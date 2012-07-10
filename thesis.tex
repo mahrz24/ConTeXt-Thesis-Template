@@ -18,18 +18,15 @@
 % Abstract
 % Dedication
 % Epigraph
-% TOC, TOF, TOT *
-% Abbreviations *
-% Symbols *
-% Foreword/Acknowledgements *
+% TOC, TOF*, TOT*
+% Abbreviations*
+% Symbols*
+% Foreword/Acknowledgements
 
 % Bibliography
 % Index
 
 %% BUGS
-% Page numbering starts with page 5 instead of 1 as it should
-% Roman numeral on toc
-% TOC not working
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Thesis Project
@@ -42,8 +39,13 @@
 \environment env_thesis_layout
 \setupnotation[footnote][way=bypage,numbercommand=\tf]
 
+\setupcolor[hex]
+\definecolor[linkcolor][h=222222]
+\definecolor[linkcontrastcolor][h=EE2222]
+
 % Use pdf links & clickable urls
-\setupinteraction[state=start]
+\setupinteraction[state=start, color=linkcolor, contrastcolor=linkcontrastcolor, 
+                  focus=standard]
 
 % Use this module to print epigraphs
 \usemodule[epigraph]

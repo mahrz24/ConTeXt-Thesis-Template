@@ -128,6 +128,24 @@
                           numberstyle=\tfx,
                           distance=6pt]
 
+\unprotect
+
+\definelistplacement [chapter_placement]#1#2#3{%
+  {\hbox to \hsize%
+    {\framed[frame=off, width=0.5cm, align=left]{\color[red]{#1}}%
+     \framed[frame=off, align=right]{\hskip0.1cm\cap{#2}}\hfill%
+     \framed[frame=off, align=right]{#3}}}}
+
+\definelistplacement [section_placement]#1#2#3{%
+  {\hbox to \hsize%
+    {\framed[frame=off, width=0.5cm, align=left]{}%
+     \framed[frame=off, align=right]{\hskip0.1cm\it #2}\hfill%
+     \framed[frame=off, align=right]{#3}}}}
+
+\setuplist[chapter][alternative=chapter_placement]
+\setuplist[section][alternative=section_placement]
+
+\protect
 
 \stopenvironment
 
