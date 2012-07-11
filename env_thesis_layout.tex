@@ -54,7 +54,7 @@
 \definecolor[ChapterNumberColor][h=BBBBBB]
 
 % Margins
-\setupinmargin[right][style=\tfxx]
+\setupinmargin[outer][style=\tfxx]
 
 % Page Numbering
 \setuppagenumbering[alternative=doublesided]
@@ -151,11 +151,14 @@
 
 \setuplist[figure][textstyle=\tfx]
 
-% Floats
-
 % General captions
 \setupcaptions [headstyle=\cap\ss, style=\ss\tfxx, width=\hsize]
 
+\definefloat[rmcfigure][figures][figure]
+\setupcaptions[rmcfigure][width=\rightmarginwidth, command=\inright]
+
+\definefloat[lmcfigure][figures][figure]
+\setupcaptions[lmcfigure][width=\rightmarginwidth, command=\inleft]
 
 \stopenvironment
 
