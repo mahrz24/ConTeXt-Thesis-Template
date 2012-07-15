@@ -17,13 +17,13 @@
 % Abstract
 % Dedication
 % Epigraph
-% TOC, TOF*, TOT*
-% Abbreviations*
-% Symbols*
+% TOC, TOF, TOT
+% Abbreviations
+% Symbols
 % Foreword/Acknowledgements
 
-% Bibliography*
-% Index*
+% Bibliography
+% Index
 
 
 %% BUGS
@@ -49,6 +49,11 @@
 
 % Use this module to print epigraphs
 \usemodule[epigraph]
+
+% Setup bibliography
+\usemodule[bib]
+\usemodule[bibltx]
+\setupbibtex[database=thesis]
 
 \version[concept]
 \language[en-gb]
@@ -116,15 +121,26 @@
 \component intro
 \component pics
 \component math
-\stopbodymatter
 
+\stopbodymatter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Appendix
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\startappendices
+
+\chapter{Test}
+
+\stopappendices
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Backmatter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\startbackmatter
+
+\component bib
+\component index
+
+\stopbackmatter
 
 \stopproduct
