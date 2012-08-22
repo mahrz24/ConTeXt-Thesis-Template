@@ -152,13 +152,13 @@
 \setuplist[figure][textstyle=\tfx]
 
 % General captions
-\setupcaptions [headstyle=\cap\ss, style=\ss\tfxx, width=\hsize]
+\setupcaptions[headstyle=\cap\ss, style=\ss\tfxx, width=\hsize,way=bychapter, prefixsegments=chapter, prefix=yes]
 
 \definefloat[rmcfigure][figures][figure]
-\setupcaptions[rmcfigure][width=\rightmarginwidth, command=\inright]
+\setupcaption[rmcfigure][width=\rightmarginwidth, command=\inright]
 
 \definefloat[lmcfigure][figures][figure]
-\setupcaptions[lmcfigure][width=\rightmarginwidth, command=\inleft]
+\setupcaption[lmcfigure][width=\rightmarginwidth, command=\inleft]
 
 % Bibliography
 
