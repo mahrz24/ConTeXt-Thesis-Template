@@ -12,3 +12,15 @@
   }
   \blank[5*medium]
 }
+
+\def\ChapterEpigraph[#1][#2][#3]
+{
+  \rbox {\tfx
+      \startepi
+        #1
+      \stopepi
+      \vskip0.1cm
+      \cap{#2}, #3
+  }
+  \blank[3*medium]
+}

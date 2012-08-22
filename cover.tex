@@ -1,15 +1,31 @@
 \startproduct cover
 
 \project project_thesis
-
-\showlayout
-
 \version[concept]
+
+\def\spine{40mm}
+
+\definepapersize[CoverSize][width=\dimexpr420mm+\spine\relax,height=297mm]
+\setuppapersize[CoverSize, CoverSize]
+
+\enablemode[cover]
+
+\definelayout[titles][
+  %location=middle,marking=color
+  topspace=2.625cm,
+  backspace=2.625cm,
+  header=0cm,
+  height=25.95cm,
+  footer=1.5cm,
+  width=15.75cm,
+  leftedge=0cm,
+  leftmargin=0cm,
+  leftdistance=0cm,
+  leftmargindistance=0cm,
+  rightmargin=3.5cm,
+]
 
 % Load the title information
 \component title
-
-% Typeset the coverx
-\CoverFront
 
 \stopproduct

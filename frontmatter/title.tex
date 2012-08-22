@@ -29,12 +29,23 @@ Ut ante dolor, interdum sit amet dapibus sed, tempus vitae turpis. Nam faucibus 
 \endcopyright
 
 \starttext
-% Print the pre title page if wanted
-\startmode[pretitled]
-  \PreTitlePage
-\stopmode
-% Actually print the title page
-\TitlePage
+
+  \startallmodes[docbody, pretitled]
+    % Print the pre title page if wanted
+    \PreTitlePage
+  \stopallmodes
+  
+  \startmode[docbody]
+    % Actually print the title page
+    \TitlePage
+  \stopmode
+
+  \startmode[cover]
+    \CoverFront
+    \CoverSpine
+    \CoverBack
+  \stopmode
+
 \stoptext
 
 \stopcomponent
